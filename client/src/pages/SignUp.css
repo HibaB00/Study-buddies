@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+body{
+    background-color: #F0E1FF;
+    margin: 0;
+}
+
+#signup-title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    color: #E1D2FF;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.inputs-container{
+    position: relative;
+    width: 564px;
+    height: 688px;
+    background: #757BC8;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+
+.inputs{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.inputs-sign-up{
+    width: 380px;
+    height: 20px;
+    border: none;
+    background: #CBB2FE;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 20px;
+    color: #757BC8;
+}
+
+.singup-img{
+    position: absolute;
+    bottom: 70px;
+    left: 60%;
+}
+.singup-img2{
+    position: absolute;
+    bottom: 70px;
+    left: 20%; 
+}
+
+.signup-btn{
+    height: 94px;
+    width: 94px;
+    border: none;
+    border-radius: 50%;
+    background-color: #CBB2FE;
+    color: #8E94F2;
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-right: 320px;
+}
+
+.sign-in-aref{
+    font-size: 24px;
+    color: #F0E1FF;
+    margin-left: 125px;
+}
+
+
+::placeholder{
+    color: #F2F2F2;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.filepond--root {
+    width: 150px;
+    height: 150px;
+}
+
+

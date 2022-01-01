@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+.rooms-container{
+    background: #757BC8;
+    height: 100vh;
+}
+
+.rooms-navbar{
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+
+#private{
+    text-decoration: underline;
+}
+
+.rooms-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 190px;
+    margin-right: 190px;
+}
+
+.create-room{
+    display: flex;
+    width: 348px;
+    height: 228px;
+    background: #F0E1FF;
+    border: 9px solid #CBB2FE;
+    box-sizing: border-box;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    margin-bottom: 37px;
+    margin-top: 10px;
+}
+
+.your-rooms{
+    width: 348px;
+    height: 228px;
+    background: #F0E1FF;
+    border: 9px solid #CBB2FE;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-right: 32px;
+    margin-bottom: 37px;
+    margin-top: 10px;
+}
+
+.create-room-btn{
+    background: #F0E1FF;
+    color: #757BC8;
+    font-size: 30px;
+    border: none;
+}
+
+.roomImg{
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.roomName{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color:#CBB2FE;
+    margin: 0;
+    margin-top: 5px;
+}
+
+

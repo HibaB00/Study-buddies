@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.popup-inner{
+    position: relative;
+    display: flex;
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+    height:600px;
+    background: #F0E1FF;
+    border: 3px solid #757BC8;
+    box-sizing: border-box;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner .close-btn{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    border: none;
+    background: #F0E1FF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #757BC8;
+    color: #757BC8;
+    font-size: 18px;
+}
+
+.room-img{
+    width: 297px;
+    height: 186px;
+    background: #8E94F2;
+    border: 3px solid #757BC8;
+    box-sizing: border-box;
+    border-radius: 30px;    
+}
+
+.img-room-chosen{
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px;  
+}
+
+.room-name{
+    width: 300px;
+    height: 54px;
+    padding: 20px;
+    background: #E1D2FF;
+    border: 3px solid #757BC8;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: 25px;
+    color: #757BC8;
+    margin-top: 20px;
+}
+
+.pick-room-type{
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    color: #757BC8;
+}
+
+#create-btn{
+    border: none;
+    width: 170px;
+    height: 50px;
+    background: #757BC8;
+    border-radius: 20px;
+    color: #F0E1FF;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
