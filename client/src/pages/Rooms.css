@@ -10,10 +10,6 @@
     margin-bottom: 40px;
 }
 
-#private{
-    text-decoration: underline;
-}
-
 .rooms-list{
     display: flex;
     flex-wrap: wrap;
@@ -34,6 +30,7 @@
     margin-right: 32px;
     margin-bottom: 37px;
     margin-top: 10px;
+    cursor:pointer;
 }
 
 .your-rooms{
@@ -46,6 +43,7 @@
     margin-right: 32px;
     margin-bottom: 37px;
     margin-top: 10px;
+    cursor:pointer;
 }
 
 .create-room-btn{
@@ -72,5 +70,25 @@
     margin: 0;
     margin-top: 5px;
 }
+
+.rooms{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color:#CBB2FE;
+    margin-right: 30px;
+    cursor:pointer;
+}
+
+.active-room{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color:#CBB2FE;
+    margin-right: 30px;
+    cursor:pointer;
+    text-decoration: underline;
+}
+
 
 

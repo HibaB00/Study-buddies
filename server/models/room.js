@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const roomSchema = mongoose.Schema({
     title: {
@@ -9,7 +10,12 @@ const roomSchema = mongoose.Schema({
         
     },
     admin: String,
-    type: String
+    type: String,
+    messages:[{
+        message: String,
+        author: String,
+        time: String
+    }]
 })
 
 

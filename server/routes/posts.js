@@ -6,6 +6,36 @@ const jwt = require('jsonwebtoken')
 const jwtDecode = require('jwt-decode')
 const ImgMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
+
+router.get('/getPublicRooms', async (req, res) =>{
+    try{
+        const publicRooms = await Rooms.find({type: 'public'})
+        res.json({publicRooms: publicRooms})
+    }catch (error){
+        res.status(404).json({message: error.message})
+    }
+})
+
+router.get('/:roomId', async (req, res) =>{
+    try{
+        const roomInfo = await Rooms.findOne({_id: req.params.roomId})
+        res.json({room: roomInfo})
+    }catch (error){
+        res.status(404).json({message: error.message})
+    }
+})
+
+router.post('/getRoomInfo', async (req, res) => {
+    try{
+        const roomInfo = await Rooms.findOne({_id: req.body.roomId})
+        res.json({oldmessages: roomInfo.messages})
+    }catch (error){
+        res.status(404).json({message: error.message})
+    }
+})
+
+
+
 router.post('/getRooms', async(req, res) => {
     try{
         const postRooms = await req.body.username
