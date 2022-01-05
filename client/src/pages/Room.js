@@ -2,9 +2,6 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import Chat from '../components/Chat';
 import {io} from 'socket.io-client';
-import Timer from "../components/Pomodoro/Timer";
-import Settings from "../components/Pomodoro/Settings";
-import SettingsContext from "../components/Pomodoro/SettingsContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCommentDots, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import './Room.css'
@@ -13,9 +10,6 @@ const socket = io('http://localhost:5000')
 function Room() { 
 
     const [room, setRoom] = useState([])
-    const [showSettings, setShowSettings] = useState(false);
-    const [workMinutes, setWorkMinutes] = useState(45);
-    const [breakMinutes, setBreakMinutes] = useState(15);
     const [roomId, setRoomId] = useState("")
     const [buttonPopup, setButtonPopup] = useState(true);
     const { roomID } = useParams();
@@ -62,8 +56,8 @@ function Room() {
     return (
           <div className="main-room">
             <div className="show-chat">
-                <button className="show-chat-btn"><FontAwesomeIcon icon={faCommentDots} /></button>
-                <Chat socket={socket} username={localStorage.getItem('username')} room={roomId}/> 
+                <button className="show-chat-btn" onClick={() => setButtonPopup(!buttonPopup)}><FontAwesomeIcon icon={faCommentDots} /></button>
+                {!buttonPopup ?<Chat socket={socket} username={localStorage.getItem('username')} room={roomId}/> : <></>}
             </div>
             <div className="youtube-video">
                 <iframe width="500" height="280" className="video" src={newLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -71,18 +65,6 @@ function Room() {
                 <button onClick={sendLink} className='send-link-btn'>&#9658;</button>
                 <label id='link-invite'><FontAwesomeIcon icon={faUserPlus} /> http://localhost:3000/{roomID}</label>
             </div>
-            <main>
-                <SettingsContext.Provider value={{
-                  showSettings,
-                  setShowSettings,
-                  workMinutes,
-                  breakMinutes,
-                  setWorkMinutes,
-                  setBreakMinutes,
-                }}>
-                  {showSettings ? <Settings /> : <Timer />}
-                </SettingsContext.Provider>
-            </main>
               
             
           </div>
