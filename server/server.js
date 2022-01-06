@@ -49,6 +49,9 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("User Disconnected", socket.id);
     });
+    socket.on("send_timer", async(data) => {
+        socket.to(data.roomId).emit("receive_time", data)
+    })
 });
   
  

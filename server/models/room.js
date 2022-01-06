@@ -15,7 +15,8 @@ const roomSchema = mongoose.Schema({
         message: String,
         author: String,
         time: String
-    }]
+    }],
+    time: String
 })
 
 

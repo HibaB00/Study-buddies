@@ -25,6 +25,21 @@ router.get('/:roomId', async (req, res) =>{
     }
 })
 
+router.post('/deleteRoom', async (req, res) => {
+    try{
+        const deleteRoom = await Rooms.deleteOne({_id: req.body.roomId});
+        const user = await User.findOne({username: req.body.admin});
+        let filter = user.rooms.filer(function(value){
+                return value != req.body.roomId
+        })
+        user.rooms.push(filter)
+        user.save();
+        
+    }catch (error){
+        res.status(404).json({message: error.message})
+    }
+})
+
 router.post('/getRoomInfo', async (req, res) => {
     try{
         const roomInfo = await Rooms.findOne({_id: req.body.roomId})

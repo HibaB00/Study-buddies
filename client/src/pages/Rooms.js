@@ -1,6 +1,6 @@
 import './Rooms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle, faUserPlus} from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faUserPlus, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 import Popup from '../components/Popup';
 import {useState, useEffect} from 'react'
 import { useHistory } from "react-router-dom"
@@ -17,6 +17,10 @@ function Rooms() {
   const [user, setUser] = useState({
       username: ''
   });
+  const [room, setRoom] = useState({
+    roomId: '',
+    admin: '',
+});
 
   const toggleTab = (index) =>{
       setToggleState(index)
@@ -73,6 +77,26 @@ function Rooms() {
 function goToRoom(roomId){
     history.push("/"+roomId)
 }
+async function deleteRoom(roomId, admin){
+    const newRoom = {...room, roomId: roomId, admin: admin}
+    setRoom(newRoom);
+    const body = newRoom;
+    try{
+        let res = await fetch('http://localhost:5000/posts/deleteRoom', {
+        method: 'POST',
+        headers: {
+            "Access-Control-Allow-Origin" : "*", 
+            "Access-Control-Allow-Credentials" : true,
+            "mode": "cors",
+            "Content-type": "application/json"
+            },
+            body:JSON.stringify(body)
+        });
+        window.location.reload();
+    }catch(error){
+        console.log({error: error.message})
+    }
+}
 
   return (
     <div className="rooms-container">
@@ -88,9 +112,10 @@ function goToRoom(roomId){
                 <button className="create-room-btn" onClick={() => setButtonPopup(true)}><FontAwesomeIcon icon={faPlusCircle} /></button>
             </div>
             { rooms.length !== 0 ? rooms.rooms.map((room) => 
-                <div className="your-rooms" onClick={() => goToRoom(room._id)}>
-                    <img src={room.roomImageType} className="roomImg"/>
-                    <p className="roomName">{room.title}</p>
+                <div className="your-rooms">
+                    <img src={room.roomImageType} className="roomImg" onClick={() => goToRoom(room._id)}/>
+                    <p className="roomName" target="room">{room.title}</p>
+                    <button className="delete-btn" name="room" onClick={() => deleteRoom(room._id, room.admin)}><FontAwesomeIcon icon={faTrashAlt}/></button>
                 </div>
             ): <Loading/>}
             <Popup trigger={buttonPopup} setTrigger={setButtonPopup} />

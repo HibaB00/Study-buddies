@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+.logout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logout-btn{
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    width: 300px;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: #ff3030;
+}
+
+.close-btn{
+    border: none;
+    font-size: 50px;
+    background: transparent;
+    color: white;
+}

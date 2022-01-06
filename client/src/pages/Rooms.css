@@ -41,7 +41,7 @@
     box-sizing: border-box;
     border-radius: 30px;
     margin-right: 32px;
-    margin-bottom: 37px;
+    margin-bottom: 50px;
     margin-top: 10px;
     cursor:pointer;
 }
@@ -88,6 +88,16 @@
     margin-right: 30px;
     cursor:pointer;
     text-decoration: underline;
+}
+
+.delete-btn{
+    position: absolute;
+    background: transparent;
+    font-size: 18px;
+    color: #F0E1FF;
+    border: none;
+   margin-top: 5px;
+   margin-bottom: 10px;
 }
 
 

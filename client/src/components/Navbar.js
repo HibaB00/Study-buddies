@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../images/logo.png'
 import './Navbar.css'
+import Logout from './Logout';
 import jwt_decode from "jwt-decode";
 import ProfileImg from '../images/icon.png'
 
 function Navbar() { 
-    
+    const [buttonPopup, setButtonPopup] = useState(false);
     const [username,setUsername] = useState('');
 
     useEffect(() => {
@@ -38,8 +39,9 @@ function Navbar() {
                 </div>
                 <ul className="navbar-list">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/rooms">Rooms</a></li>
-                    {username ? <li><a href="/profile">{username}</a></li> : <li><a href="/signup">SignUp</a></li>}
+                    {localStorage.length === 0 ? <li><a href="/signup">Rooms</a></li> : <li><a href="/rooms">Rooms</a></li>}
+                    {username ? <li onClick={() => setButtonPopup(true)}><a>{username}</a></li> : <li><a href="/signup">SignUp</a></li>}
+                    <Logout trigger={buttonPopup} setTrigger={setButtonPopup} />
                 </ul>
         </nav>
             
