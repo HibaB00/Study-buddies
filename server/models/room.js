@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const roomSchema = mongoose.Schema({
     title: {
-        type: String
+        type: String,
+        unique: true
     },
     roomImageType: {
         type: String

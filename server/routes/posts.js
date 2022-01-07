@@ -123,7 +123,7 @@ router.post('/registerRoom', async(req, res) =>{
         await user.save();
         res.json({status:'added room', user: user})
     }catch (error){
-        res.status(409).json({message: error.message})
+        res.json({status: 'error', error:'room name already exists'})
     }
 })
 

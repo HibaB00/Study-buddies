@@ -18,6 +18,7 @@ function Popup(props) {
         const newRoomData = { ...roomData, admin: localStorage.getItem('username') }
         setRoomData(newRoomData);
         const body = newRoomData;
+        console.log(body)
         
         try{
             let res = await fetch('http://localhost:5000/posts/registerRoom', {
@@ -30,11 +31,17 @@ function Popup(props) {
             },
             body: JSON.stringify(body)
           });
-          window.location.href = '/rooms'
+          let data = await res.json();
+          console.log(data)
+          if(data.user){
+            window.location.href = '/rooms'
+          }else{
+            alert("room name already exists")
+          }
         
             
         }catch(err){
-
+            console.log(err);
         }
     }
 
