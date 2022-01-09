@@ -75,7 +75,7 @@ router.post('/checkUser', async(req, res) =>{
                 res.json({status: 'error', user: ""})
             }
         }else{
-            res.json({status: 'error', message: 'no valide user', user: ""})
+            res.json({status: 'error', message: 'no valid user', user: ""})
         }
     }catch (error){
         res.status(404).json({message: error.message})

@@ -7,6 +7,7 @@ const cors = require('cors');
 const postRoutes = require('./routes/posts.js');
 const fileUpload = require('express-fileupload');
 const http = require("http");
+require('dotenv/config');
 // const { Server } = require("socket.io");
 let corsOptions = { cors: {
     origin: "*",
@@ -56,7 +57,7 @@ io.on("connection", (socket) => {
   
  
 
-const CONNECTION_URL = 'mongodb+srv://studybuddywebsite:abdelkarim1@studybuddy.6eaqy.mongodb.net/StudyBuddy'
+const CONNECTION_URL = process.env.DB_CONNECTION;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
