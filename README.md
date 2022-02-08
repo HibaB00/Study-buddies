@@ -1,3 +1,7 @@
+# Study Buddies
+
+This website was made for people who want to study/be productive with buddies where they can enter a room, chat, listen to the same music and have a synced Pomodoro
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
